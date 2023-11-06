@@ -1,99 +1,181 @@
 "use client";
-import { usePathname } from 'next/navigation';
-import { useEffect, useId, useRef, useState } from 'react';
-import {motion, MotionConfig, useReducedMotion} from "framer-motion"
-import Container from './Container';
+import { usePathname } from "next/navigation";
+import { useEffect, useId, useRef, useState } from "react";
+import { motion, MotionConfig, useReducedMotion } from "framer-motion";
+import Container from "./Container";
 import Link from "next/link";
-import Logo from './Logo';
-import {HiMenuAlt4} from "react-icons/hi";
-import Button from './Button';
-import clsx from 'clsx';
+import Logo from "./Logo";
+import { HiMenuAlt4 } from "react-icons/hi";
+import {IoMdClose} from "react-icons/io";
+import Button from "./Button";
+import clsx from "clsx";
+import Image from "next/image";
 
 const Header = ({
-    panelId, 
-    invert = false,
-    icon: Icon,
-    expanded,
-    onToggle,
-    toggleRef,
-}) => { 
-    // Container
-    return(
-        <Container>
-            <div className='flex items-center justify-between'>
-                {/* Logo */}
-                <Link href={"/"} aria-label='Home'>
-                <Logo invert={invert} > Studio_clone
-                </Logo>
-                </Link>
-                <div className='flex items-center gap-x-8'>
-                    <Button href={"/contact"} invert={invert}>
-                        contact Us
-                    </Button>
-                    <button>
-                        <Icon
-                        className = {clsx(
-                            "h-6 w-6",
-                            invert
-                            ? "fill-white group-hover:fill-neutral-200"
-                            : "fill-neutral-950 group-hover:fill-neutral-700"
-                        )}/>
-                    </button>
-                </div>
-            </div>
-        </Container>
-    );
+  panelId,
+  invert = false,
+  icon: Icon,
+  expanded,
+  onToggle,
+  toggleRef,
+}) => {
+  // Container
+  return (
+    <Container>
+      <div className="flex items-center justify-between">
+        {/* Logo */}
+        <Link href={"/"} aria-label="Home">
+          <Image src={"/assets/logos.png"} alt="logo" height={60} width={60} />
+          <Logo invert={invert}> Studio_clone</Logo>
+        </Link>
+        <div className="flex items-center gap-x-8">
+          <Button href={"/contact"} invert={invert}>
+            Contact Us
+          </Button>
+          <button
+            ref={toggleRef}
+            type="button"
+            onClick={onToggle}
+            aria-expanded={expanded.toString()}
+            aria-controls={panelId}
+            className={clsx(
+              "group -m-2.5 rounded-full p-2.5 transition",
+              invert ? "hover:bg-white/10" : "hover:bg-neutral-950/10"
+            )}
+            aria-label="Toggle navigation"
+          >
+            <Icon
+              className={clsx(
+                "h-6 w-6",
+                invert
+                  ? "fill-white group-hover:fill-neutral-200"
+                  : "fill-neutral-950 group-hover:fill-neutral-700"
+              )}
+            />
+          </button>
+        </div>
+      </div>
+    </Container>
+  );
 };
 
-const LayerInner = ({children}) => {
-    const panelId = useId();
-    const [expanded, setExpanded] = useState(false);
-    const openRef = useRef();
-    const closeRef = useRef();
-    const navRef = useRef();
-    const shouldReduceMotion = useReducedMotion();
-
-    useEffect(() => {
-        function onClick(event){
-            if (event.target.close("a")?.href === window.location.href){
-                setExpanded(false);
-            }
-        }
-
-        window.addEventListener("click", onClick);
-        return () => {
-            window.removeEventListener("click", onClick);
-        };
-    }, []);
-
-    return (
-        <MotionConfig transition={shouldReduceMotion ? {duration :0} : undefined}>
-            <header>
-                <div
-                className='absolute left-0 right-0 top-2 z-40 pt-14'
-                aria-hidden = {expanded ? "true" : undefined}
-                inert = {expanded ? "" : undefined} >
-
-                    <Header
-                    panelId={panelId}
-                    icon={HiMenuAlt4}
-                    toggleRef={openRef}
-                    expanded={expanded}
-                    onToggle={() => {
-                        setExpanded((expanded) => !expanded);
-                        window.setTimeout(() =>
-                        closeRef.current?.focus({preventScroll: true}))
-                    }
-                    }/>
-                </div>
-            </header>
-        </MotionConfig>
-    )
-}
-
-export default function Layout({children}) {
-    const pathName = usePathname();
+// Navigation Row
+const NavigationRow = ({ children }) => {
   return (
-     <LayerInner key={pathName}>{children}</LayerInner>
-  )
+    <div className="even:mt-px sm:bg-neutral-950">
+      <Container>
+        <div className="grid grid-cols-1 sm:grid-cols-2">{children}</div>
+      </Container>
+    </div>
+  );
+};
+
+const NavigationItems = ({ href, children }) => {
+  <Link
+    href={href}
+    className="group relative isolate -mx-6 bg-neutral-950 px-6 py-10
+    even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:odd:pr-16 sm:even:mt-0 sm:even:border-1 sm:even:border-neutral-800
+    sm:even:pl-16"
+  >
+    {children}
+    <span
+      className="absolute inset-y-0 -z-10 w-screen bg-neutral-100 opacity-0
+        transition group-odd:right-0 group-even:left-0 group-hover:opacity-100"
+    ></span>
+  </Link>;
+};
+
+// Navigation
+const Navigation = () => {
+  return (
+    <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
+      <NavigationRow>
+        <NavigationItems href={"/work"}>Our Works</NavigationItems>
+        <NavigationItems href={"/about"}>About Us</NavigationItems>
+      </NavigationRow>
+
+      <NavigationRow>
+        <NavigationItems href={"/process"}>Our Process</NavigationItems>
+        <NavigationItems href={"/blog"}>Blog</NavigationItems>
+      </NavigationRow>
+    </nav>
+  );
+};
+
+const LayerInner = ({ children }) => {
+  const panelId = useId();
+  const [expanded, setExpanded] = useState(false);
+  const openRef = useRef();
+  const closeRef = useRef();
+  const navRef = useRef();
+  const shouldReduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    function onClick(event) {
+      if (event.target.closest("a")?.href === window.location.href) {
+        setExpanded(false);
+      }
+    }
+
+    window.addEventListener("click", onClick);
+    return () => {
+      window.removeEventListener("click", onClick);
+    };
+  }, []);
+
+  return (
+    <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
+      <header>
+        <div
+          className="absolute left-0 right-0 top-2 z-40 pt-14"
+          aria-hidden={expanded ? "true" : undefined}
+          inert={expanded ? "" : undefined}
+        >
+          <Header
+            panelId={panelId}
+            icon={HiMenuAlt4}
+            toggleRef={openRef}
+            expanded={expanded}
+            onToggle={() => {
+              setExpanded((expanded) => !expanded);
+              window.setTimeout(() =>
+                closeRef.current?.focus({ preventScroll: true })
+              );
+            }}
+          />
+        </div>
+        <motion.div
+          layout
+          id={panelId}
+          style={{ height: expanded ? "auto" : "0.5rem" }}
+          className="relative z-50 overflow-hidden bg-neutral-950 pt-2"
+          aria-hidden={expanded ? undefined : "true"}
+          inert={expanded ? undefined : ""}
+        >
+          <motion.div layout className="bg-neutral-800">
+            <div ref={navRef}
+            className="bg-neutral-950 pb-16 pt-14">
+              <Header
+            panelId={panelId}
+            icon={IoMdClose}
+            toggleRef={openRef}
+            expanded={expanded}
+            onToggle={() => {
+              setExpanded((expanded) => !expanded);
+              window.setTimeout(() =>
+                closeRef.current?.focus({ preventScroll: true })
+              );
+            }}
+          />
+            </div>
+          </motion.div>
+        </motion.div>
+      </header>
+    </MotionConfig>
+  );
+};
+
+export default function Layout({ children }) {
+  const pathName = usePathname();
+  return <LayerInner key={pathName}>{children}</LayerInner>;
 }
