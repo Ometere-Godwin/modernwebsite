@@ -6,7 +6,7 @@ import Container from "./Container";
 import Link from "next/link";
 import Logo from "./Logo";
 import { HiMenuAlt4 } from "react-icons/hi";
-import {IoMdClose} from "react-icons/io";
+import { IoMdClose } from "react-icons/io";
 import Button from "./Button";
 import clsx from "clsx";
 import Image from "next/image";
@@ -71,7 +71,8 @@ const NavigationRow = ({ children }) => {
 };
 
 const NavigationItems = ({ href, children }) => {
-  <Link
+  return(
+    <Link
     href={href}
     className="group relative isolate -mx-6 bg-neutral-950 px-6 py-10
     even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:odd:pr-16 sm:even:mt-0 sm:even:border-1 sm:even:border-neutral-800
@@ -79,10 +80,11 @@ const NavigationItems = ({ href, children }) => {
   >
     {children}
     <span
-      className="absolute inset-y-0 -z-10 w-screen bg-neutral-100 opacity-0
+      className="absolute inset-y-0 -z-10 w-screen bg-neutral-900 opacity-0
         transition group-odd:right-0 group-even:left-0 group-hover:opacity-100"
     ></span>
-  </Link>;
+  </Link>
+  )
 };
 
 // Navigation
@@ -153,20 +155,29 @@ const LayerInner = ({ children }) => {
           inert={expanded ? undefined : ""}
         >
           <motion.div layout className="bg-neutral-800">
-            <div ref={navRef}
-            className="bg-neutral-950 pb-16 pt-14">
+            <div ref={navRef} className="bg-neutral-950 pb-16 pt-14">
               <Header
-            panelId={panelId}
-            icon={IoMdClose}
-            toggleRef={openRef}
-            expanded={expanded}
-            onToggle={() => {
-              setExpanded((expanded) => !expanded);
-              window.setTimeout(() =>
-                closeRef.current?.focus({ preventScroll: true })
-              );
-            }}
-          />
+                panelId={panelId}
+                icon={IoMdClose}
+                toggleRef={openRef}
+                expanded={expanded}
+                onToggle={() => {
+                  setExpanded((expanded) => !expanded);
+                  window.setTimeout(() =>
+                    closeRef.current?.focus({ preventScroll: true })
+                  );
+                }}
+              />
+            </div>
+            {/* Navigation */}
+            <Navigation/>
+            <div className="relative bg-neutral-950 before:absolute
+            before:inset-x-0 before:h-px before:bg-neutral-800">
+                <Container>
+                    <div>
+                        <div></div>
+                    </div>
+                </Container>
             </div>
           </motion.div>
         </motion.div>
