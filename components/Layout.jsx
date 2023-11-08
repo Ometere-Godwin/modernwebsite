@@ -10,6 +10,7 @@ import { IoMdClose } from "react-icons/io";
 import Button from "./Button";
 import clsx from "clsx";
 import Image from "next/image";
+import Offices from "./Offices";
 
 const Header = ({
   panelId,
@@ -174,8 +175,15 @@ const LayerInner = ({ children }) => {
             <div className="relative bg-neutral-950 before:absolute
             before:inset-x-0 before:h-px before:bg-neutral-800">
                 <Container>
-                    <div>
-                        <div></div>
+                    <div >
+                        <div>
+                            <h2 className="font-display text-base font-semibold text-white">
+                                Our Offices
+                            </h2>
+                            <Offices
+                            invert
+                            className = "mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2"/>
+                        </div>
                     </div>
                 </Container>
             </div>
