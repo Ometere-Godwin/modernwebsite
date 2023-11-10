@@ -11,6 +11,7 @@ import Button from "./Button";
 import clsx from "clsx";
 import Image from "next/image";
 import Offices from "./Offices";
+import SocialMedia from "./SocialMedia";
 
 const Header = ({
   panelId,
@@ -175,7 +176,8 @@ const LayerInner = ({ children }) => {
             <div className="relative bg-neutral-950 before:absolute
             before:inset-x-0 before:h-px before:bg-neutral-800">
                 <Container>
-                    <div >
+                    <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10
+                     md:grid-cols-2 sm:pt-16">
                         <div>
                             <h2 className="font-display text-base font-semibold text-white">
                                 Our Offices
@@ -184,12 +186,20 @@ const LayerInner = ({ children }) => {
                             invert
                             className = "mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2"/>
                         </div>
+                        <div className="sm:border-[1px] sm:border-neutral-800 sm:pl-16
+                        ">
+                            <h2 className="font-display text-base font-semibold text-white">
+                                Follow us
+                            </h2>
+                            <SocialMedia className="mt-6" invert/>
+                        </div>
                     </div>
                 </Container>
             </div>
           </motion.div>
         </motion.div>
       </header>
+      
     </MotionConfig>
   );
 };
