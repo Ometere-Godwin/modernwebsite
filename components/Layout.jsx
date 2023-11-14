@@ -12,6 +12,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import Offices from "./Offices";
 import SocialMedia from "./SocialMedia";
+import Footer from "./Footer";
 
 const Header = ({
   panelId,
@@ -199,7 +200,21 @@ const LayerInner = ({ children }) => {
           </motion.div>
         </motion.div>
       </header>
-      
+      <motion.div
+      layout
+      style={{borderTopLeftRadius: 40, borderTopRightRadius: 40}}
+      className="relative flex flex-auto overflow-hidden bg-white pt-14"
+      >
+        <motion.div
+        layout
+        className="relative isolate flex w-full flex-col pt-9">
+          <main
+          className = "w-full flex-auto">
+            {children}
+          </main>
+          <Footer/>
+        </motion.div>
+      </motion.div>
     </MotionConfig>
   );
 };

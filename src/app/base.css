@@ -1,0 +1,10 @@
+@tailwind base;
+
+@font-face {
+    font-family: "Mona Sans";
+    font-weight: 200 900;
+    font-display: block;
+    font-style: normal;
+    font-stretch: 75% 125%;
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Urbanist:ital,wght@1,300&display=swap');
+}
