@@ -1,6 +1,7 @@
 import React from 'react'
 import Container from './Container'
 import FadeIn from './FadeIn';
+import FooterNavigation from './FooterNavigation';
 
 const Newsletterform = () => {
     return(
@@ -23,7 +24,9 @@ export default function Footer() {
     as='footer'
     className="mt-24 w-full sm:mt-12 lg:mt-40">
         <FadeIn>
-            <div></div>
+            <div className='grid grid-cols-1 gap-x-8 lg:grid-cols-2'>
+                <FooterNavigation/>
+            </div>
         </FadeIn>
     </Container>
   )

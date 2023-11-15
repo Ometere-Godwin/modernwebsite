@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import {BsFacebook, BsTwitter, BsGithub, BsLinkedin} from "react-icons/bs";
 
-const SocialMediaProfiles = [
+export const SocialMediaProfiles = [
     {
         title: "Github",
         href: "https://github.com/Ometere-Godwin",

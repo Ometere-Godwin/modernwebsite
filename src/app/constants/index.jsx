@@ -1,0 +1,54 @@
+import { SocialMediaProfiles } from "../../../components/SocialMedia";
+
+export const navigation = [
+    {
+        title: "work",
+        links: [
+            {
+                title: "Amazon Clone",
+                href: "/work/amazonclone",
+            },
+
+            {
+                title: "Bazar e-commerce",
+                href: "/work/bazar",
+            },
+
+            {
+                title: "Blog 101",
+                href: "/work/blog101",
+            },
+
+            {
+                title: (
+                    <>
+                    See all <span aria-hidden= "true">&rarr;</span>
+                    </>
+                ),
+
+                href: "/work",
+            },
+        ],
+    },
+
+    {
+        title: "Company",
+        links: [
+            {title: "About", href: "/about"},
+            {title: "Process", href: "/process"},
+            {title: "Blog", href: "/blog"},
+            {title: "Contact Us", href: "/contact"},
+        ],
+    },
+
+    {
+        title: "Connect",
+        links: SocialMediaProfiles,
+    },
+];
+
+export default function index() {
+  return (
+    <div>index</div>
+  )
+}
