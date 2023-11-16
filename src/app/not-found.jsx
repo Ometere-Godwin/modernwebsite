@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <Container>
+    <Container className="flex h-full items-center pt-20 sm:pt-24 lg:pt-32">
         <FadeIn className= "flex items-center justify-center flex-col">
             <p className='font-display text-4xl font-semibold text-neutral-950
             sm:'>
@@ -20,7 +20,7 @@ export default function NotFound() {
             <Link 
             href={"/"}
             className='mt-4 text-sm font-semibold text-neutral-950 transition
-            hover:text-neutral-700 border-2 border-neutral-300 px-1 rounded'> Go to home
+            hover:text-neutral-700 border-2 border-neutral-300 px-2 rounded uppercase'> Go to homepage
             </Link>
         </FadeIn>
     </Container>
