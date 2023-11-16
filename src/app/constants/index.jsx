@@ -2,7 +2,7 @@ import { SocialMediaProfiles } from "../../../components/SocialMedia";
 
 export const navigation = [
     {
-        title: "work",
+        title: "Work",
         links: [
             {
                 title: "Amazon Clone",
