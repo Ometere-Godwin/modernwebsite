@@ -1,5 +1,6 @@
 import React from 'react'
 import PageIntro from '../../../components/PageIntro'
+import Clients from '../../../components/Clients'
 
 export default function WorkPage() {
   return (
@@ -12,6 +13,8 @@ export default function WorkPage() {
             the same five projects we have been developing for the past decade.
         </p>
     </PageIntro>
+
+    
     </>
   )
 }

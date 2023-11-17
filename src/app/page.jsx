@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Layout from '../../components/Layout'
 import Container from '../../components/Container'
 import FadeIn from '../../components/FadeIn'
+import Clients from '../../components/Clients'
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
           </p>
         </FadeIn>
       </Container>
+      <Clients/>
     </main>
   )
 }
