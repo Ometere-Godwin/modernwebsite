@@ -3,6 +3,8 @@ import Layout from '../../components/Layout'
 import Container from '../../components/Container'
 import FadeIn from '../../components/FadeIn'
 import Clients from '../../components/Clients'
+import Testimonials from '../../components/Testimonials';
+import logoPhobiaDark from "../../public/assets/logoPhobiaDark.svg";
 
 export default function Home() {
   return (
@@ -21,6 +23,12 @@ export default function Home() {
         </FadeIn>
       </Container>
       <Clients/>
+      <Testimonials className="mt-24 sm:mt-32 lg:mt-40"
+      client={{name: "Phobia", logo: logoPhobiaDark}}>
+        The team at the studio went above and beyond with our onboarding, even
+        finding a way to access the user microphone without triggering one of those
+        annoying permission dialogs
+      </Testimonials>
     </main>
   )
 }

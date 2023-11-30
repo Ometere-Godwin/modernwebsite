@@ -1,18 +1,26 @@
 
- import { FaHome } from "react-icons/fa";
-import { MdFamilyRestroom } from "react-icons/md";
+import familyFund from "../public/assets/familyFund.svg";
+import greenLife from "../public/assets/greenLife.svg";
+import homeWork from "../public/assets/homeWork.svg";
+import logoPhobiaDark from "../public/assets/logoPhobiaDark.svg";
+import mailSmark from "../public/assets/mailSmark.svg";
+import northAdventures from "../public/assets/northAdventures.svg";
+import phobia from "../public/assets/phobia.svg";
+import unseal from "../public/assets/unseal.svg";
 import FadeIn, { FadeInStagger } from "./FadeIn";
 import Container from "./Container";
-import familywork from "../public/assets/familywork.png"
-import greenlife from "../public/assets/greenlife.png"
 import Image from "next/image";
 
 const clients = [
-    ["Home Work", familywork],
-    ["Family Fund", greenlife],
-    ["Home Work", familywork],
-    ["Family Fund", greenlife],
-];
+    ["Family Fund", familyFund],
+    ["Green Life", greenLife],
+    ["Home Work", homeWork],
+    ["Phobia", logoPhobiaDark],
+    ["Mail Shark", mailSmark],
+    ["North Adventure", northAdventures],
+    ["Unseal", unseal],
+    ["Phobia", phobia],
+]
 
 export default function Clients() {
   return (
@@ -32,7 +40,7 @@ export default function Clients() {
                     {clients.map(([client, logo]) => (
                         <li key={client}>
                             <FadeIn>
-                                <Image src={logo} alt={client} unoptimized className="w-7 h-7"/>
+                                <Image src={logo} alt={client} unoptimized/>
                             </FadeIn>
                         </li>
                     ))}
