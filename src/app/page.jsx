@@ -5,6 +5,7 @@ import FadeIn from '../../components/FadeIn'
 import Clients from '../../components/Clients'
 import Testimonials from '../../components/Testimonials';
 import logoPhobiaDark from "../../public/assets/logoPhobiaDark.svg";
+import Services from '../../components/Services'
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
         finding a way to access the user microphone without triggering one of those
         annoying permission dialogs
       </Testimonials>
+      <Services/>
     </main>
   )
 }
