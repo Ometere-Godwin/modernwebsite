@@ -39,19 +39,19 @@ export default function Services() {
               everywhere.
             </ListItem>
 
-            <ListItem title="Application development">
+            <ListItem title="Application Development">
               We specialize in crafting beautiful, high quality marketing pages.
               The rest of the website will be a shell that uses lorem ipsum
               everywhere.
             </ListItem>
 
-            <ListItem title="E-commerce">
+            <ListItem title="E-Commerce">
               We specialize in crafting beautiful, high quality marketing pages.
               The rest of the website will be a shell that uses lorem ipsum
               everywhere.
             </ListItem>
 
-            <ListItem title="Custom content management">
+            <ListItem title="Custom Content Management">
               We specialize in crafting beautiful, high quality marketing pages.
               The rest of the website will be a shell that uses lorem ipsum
               everywhere.
