@@ -5,7 +5,7 @@ import Section from "./Section";
 export default function Build() {
   return (
     <Section title="Build" image={{ src: imageLaptop, shape: 2 }}>
-      <div className="space-y-6 text-base text-neutral-600">
+      <div className="space-y-6 text-base text-neutral-600 text-justify">
         <p>
           Based off of the discovery phase, we develop a comprehensive roadmap
           for each product and start working towards delivery. The roadmap is an

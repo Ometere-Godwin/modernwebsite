@@ -16,14 +16,14 @@ export default function Values() {
         eyebrow="Our values"
         title="Balancing reliability and innovation"
       >
-        <p>
+        <p className='text-justify'>
           We strive to stay at the forefront of emerging trends and
           technologies, while completely ignoring them and forking that old
           Rails project we feel comfortable using. We stand by our core values
           to justify that decision.
-        </p>
+        </p> 
       </SectionIntro>
-      <Container className="mt-24">
+      <Container className="mt-24 text-justify">
         <GridList>
           <GridListItem title="Meticulous">
             The first part of any partnership is getting our designer to put
