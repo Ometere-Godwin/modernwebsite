@@ -3,6 +3,7 @@ import PageIntro from '../../../components/PageIntro'
 import ContactSection from '../../../components/ContactSection'
 import Discover from '../../../components/Discover'
 import Build from '../../../components/Build'
+import Deliver from '../../../components/Deliver'
 
 export default function ProcessPage() {
   return (
@@ -22,6 +23,7 @@ export default function ProcessPage() {
       {/* Build */}
       <Build/>
       {/* Deliver */}
+      <Deliver/>
     </div>
     {/* Values */}
     <ContactSection/>
