@@ -6,7 +6,7 @@ import TagList, { TagListItem } from './TagList';
 export default function Discover() {
   return (
     <Section title="Discover" image={{ src: imageWhiteboard, shape: 1 }}>
-      <div className="space-y-6 text-base text-neutral-600">
+      <div className="space-y-6 text-base text-neutral-600 text-justify">
         <p>
           We work closely with our clients to understand their{" "}
           <strong className="font-semibold text-neutral-950">needs</strong> and
@@ -18,13 +18,13 @@ export default function Discover() {
           several weeks while our account managers focus on going through their
           trash. Our senior security experts then perform social engineering
           hacks to gain access to their
-          <strong className="font-semibold text-neutral-950">business</strong>
+          <strong className="font-semibold text-neutral-950"> business </strong>
           accounts — handing that information over to our forensic accounting
           team.
         </p>
         <p>
           Once the full audit is complete, we report back with a comprehensive
-          <strong className="font-semibold text-neutral-950">plan</strong> and,
+          <strong className="font-semibold text-neutral-950"> plan</strong> and,
           more importantly, a budget.
         </p>
       </div>

@@ -23,7 +23,7 @@ export const ListItem = ({title, children}) => {
                 group-first:after:hidden">
                     {title && (
                         <strong className='font-semibold text-neutral-950'>
-                            {`${title}.`}
+                            {`${title}. `}
                         </strong>
                     )}
                     {children}
