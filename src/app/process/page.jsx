@@ -2,6 +2,7 @@ import React from 'react'
 import PageIntro from '../../../components/PageIntro'
 import ContactSection from '../../../components/ContactSection'
 import Discover from '../../../components/Discover'
+import Build from '../../../components/Build'
 
 export default function ProcessPage() {
   return (
@@ -19,6 +20,7 @@ export default function ProcessPage() {
       {/* Discover */}
       <Discover/>
       {/* Build */}
+      <Build/>
       {/* Deliver */}
     </div>
     {/* Values */}

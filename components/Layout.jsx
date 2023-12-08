@@ -25,7 +25,7 @@ const Header = ({
   // Container
   return (
     <Container>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between sticky top-0">
         {/* Logo */}
         <Link href={"/"} aria-label="Home">
           <Image src={"/assets/logos.png"} alt="logo" height={60} width={60} />
@@ -93,7 +93,7 @@ const NavigationItems = ({ href, children }) => {
 // Navigation
 const Navigation = () => {
   return (
-    <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
+    <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white sticky top-0">
       <NavigationRow>
         <NavigationItems href={"/work"}>Our Works</NavigationItems>
         <NavigationItems href={"/about"}>About Us</NavigationItems>
