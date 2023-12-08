@@ -1,5 +1,5 @@
 import imageLaptop from "../public/assets/laptop1.jpg";
-import Blockquote from "./Blockquote";
+//import Blockquote from "./Blockquote";
 import Section from "./Section";
 
 export default function Build() {
