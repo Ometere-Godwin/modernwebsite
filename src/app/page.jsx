@@ -6,6 +6,7 @@ import Clients from '../../components/Clients'
 import Testimonials from '../../components/Testimonials';
 import logoPhobiaDark from "../../public/assets/logoPhobiaDark.svg";
 import Services from '../../components/Services'
+import ContactSection from '../../components/ContactSection'
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
         annoying permission dialogs
       </Testimonials>
       <Services/>
+      <ContactSection/>
     </main>
   )
 }
