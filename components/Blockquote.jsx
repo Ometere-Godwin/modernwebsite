@@ -1,6 +1,7 @@
 import React from "react";
 import Border from "./Border";
 import clsx from "clsx";
+import Image from "next/image";
 
 function BlockquoteWithImage({ author, image, children, className }) {
   return (
