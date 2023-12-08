@@ -4,6 +4,7 @@ import ContactSection from '../../../components/ContactSection'
 import Discover from '../../../components/Discover'
 import Build from '../../../components/Build'
 import Deliver from '../../../components/Deliver'
+import Values from '../../../components/Values'
 
 export default function ProcessPage() {
   return (
@@ -26,6 +27,7 @@ export default function ProcessPage() {
       <Deliver/>
     </div>
     {/* Values */}
+    <Values/>
     <ContactSection/>
     </>
   )
