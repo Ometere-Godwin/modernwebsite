@@ -3,6 +3,7 @@ import PageIntro from '../../../components/PageIntro'
 
 export default function Aboutpage() {
   return (
+    <>
     <PageIntro eyebrow="About us"
     title="Our strength is collaboration">
         <p>
@@ -23,5 +24,6 @@ export default function Aboutpage() {
             </p>
         </div>
     </PageIntro>
+    </>
   )
 }
