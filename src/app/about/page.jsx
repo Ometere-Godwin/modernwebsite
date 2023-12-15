@@ -1,5 +1,9 @@
 import React from 'react'
 import PageIntro from '../../../components/PageIntro'
+import Container from '../../../components/Container'
+import { StatList, StatListItem } from '../../../components/StatList'
+import ContactSection from '../../../components/ContactSection'
+import Cultures from '../../../components/Cultures'
 
 export default function Aboutpage() {
   return (
@@ -24,6 +28,15 @@ export default function Aboutpage() {
             </p>
         </div>
     </PageIntro>
+    <Container className="mt-16">
+        <StatList>
+          <StatListItem value="35" label="Underpaid employees" />
+          <StatListItem value="52" label="Placated clients" />
+          <StatListItem value="$25M" label="Invoices billed" />
+        </StatList>
+      </Container>
+      <Cultures />
+      <ContactSection />
     </>
   )
 }
